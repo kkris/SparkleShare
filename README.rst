@@ -1,7 +1,7 @@
 SparkleShare
 ============
 
-SparkleShare is a collaboration and sharing tool that is designed to keep
+`SparkleShare`_ is a collaboration and sharing tool that is designed to keep
 things simple and to stay out of your way. It allows you to instantly sync
 with any Git repository you have access to.
 
