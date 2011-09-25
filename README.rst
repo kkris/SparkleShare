@@ -25,6 +25,7 @@ information see the LICENSE file or visit http://www.gnu.org/licenses/gpl-3.0.ht
 Run on Linux:
 ~~~~~~~~~~~~~
 Requirements:
+
 * git >= 1.7.0
 * gtk-sharp2
 * gvfs
