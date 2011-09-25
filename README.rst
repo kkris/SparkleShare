@@ -65,7 +65,7 @@ Installing the build dependencies on Debian or Ubuntu::
 
     sudo apt-get install gtk-sharp2 mono-runtime mono-devel monodevelop \
     libndesk-dbus1.0-cil-dev nant libnotify-cil-dev libgtk2.0-cil-dev \
-     ibwebkit-cil-dev intltool libtool python-nautilus libndesk-dbus-glib1.0-cil-dev
+    libwebkit-cil-dev intltool libtool python-nautilus libndesk-dbus-glib1.0-cil-dev
 
 For Ubuntu libappindicator support, run the following before building::
 
@@ -161,7 +161,7 @@ MonoDevelop and start the build.
 To create the SparkleShare.app, select Project from the menu bar 
 and click "Create Mac Installer..." Save the SparkleShare.app somewhere.
 
-Paste the contents of `this file`_the following file in ``SparkleShare.app/Contents/MonoBundle/config``.
+Paste the contents of `this file`_ the following file in ``SparkleShare.app/Contents/MonoBundle/config``.
 
 Copy ``/Library/Frameworks/Mono.framework/Versions/Current/lib/libintl.dylib``
 to ``SparkleShare.app/Contents/Resources``
