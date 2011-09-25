@@ -16,115 +16,108 @@ device support are planned for the future.
 
 
 License
-=======
-
+~~~~~~~
 SparkleShare is free software and licensed under the GNU GPLv3 or later. You
 are welcome to change and redistribute it under certain conditions. For more
 information see the LICENSE file or visit http://www.gnu.org/licenses/gpl-3.0.html
 
 
 Run on Linux:
-=============
-
+~~~~~~~~~~~~~
 Requirements:
+* git >= 1.7.0
+* gtk-sharp2
+* gvfs
+* intltool
+* libnotify
+* mono-core >= 2.8
+* notify-sharp
+* nautilus-python
+* openssh
+* pygtk
+* webkitgtk
+* webkit-sharp
 
-   - git >= 1.7.0
-   - gtk-sharp2
-   - gvfs
-   - intltool
-   - libnotify
-   - mono-core >= 2.8
-   - notify-sharp
-   - nautilus-python
-   - openssh
-   - pygtk
-   - webkitgtk
-   - webkit-sharp
 
+Run the service, either click the SparkleShare launcher or::
 
-Run the service, either click the SparkleShare launcher or:
+    sparkleshare start
 
-   $ sparkleshare start
+You can stop the service via the graphical interface or by typing::
 
-You can stop the service via the graphical interface or by typing:
+    sparkleshare stop
 
-   $ sparkleshare stop
+For help::
 
-For help:
-
-   $ sparkleshare --help
+    sparkleshare --help
 
 Note:
-
-   SparkleShare creates its own RSA keypair in ~/config/sparkleshare/ and uses 
-   that for authentication. Please mind this if you're planning to set up your 
-   own server by hand.
+-----
+SparkleShare creates its own RSA keypair in ~/config/sparkleshare/ and uses
+that for authentication. Please mind this if you're planning to set up your
+own server by hand.
 
 
 Build on Linux:
-===============
+~~~~~~~~~~~~~~~
+Installing the build dependencies on Debian or Ubuntu::
 
-Installing the build dependencies on Debian or Ubuntu:
-
-   $ sudo apt-get install gtk-sharp2 mono-runtime mono-devel monodevelop \
+    sudo apt-get install gtk-sharp2 mono-runtime mono-devel monodevelop \
      libndesk-dbus1.0-cil-dev nant libnotify-cil-dev libgtk2.0-cil-dev \
      libwebkit-cil-dev intltool libtool python-nautilus libndesk-dbus-glib1.0-cil-dev
 
-For Ubuntu libappindicator support, run the following before building:
+For Ubuntu libappindicator support, run the following before building::
 
-   $ sudo apt-get install libappindicator0.1-cil-dev 
+    sudo apt-get install libappindicator0.1-cil-dev
 
 
-On Fedora:
+On Fedora::
 
-   $ sudo yum install gtk-sharp2-devel mono-core mono-devel monodevelop \
+    sudo yum install gtk-sharp2-devel mono-core mono-devel monodevelop \
      ndesk-dbus-devel ndesk-dbus-glib-devel nautilus-python-devel nant \
      notify-sharp-devel webkit-sharp-devel webkitgtk-devel libtool intltool \
      gnome-doc-utils
 
 
-You can build and install SparkleShare like this:
+You can build and install SparkleShare like this::
 
-   $ ./configure --prefix=/usr (or ./autogen.sh if you build from the repository)
-   $ make
-   $ sudo make install
+    ./configure --prefix=/usr (or ./autogen.sh if you build from the repository)
+    make
+    sudo make install
 
-Note:
-
-   Use '--prefix=/usr' if you want the Nautilus extension to work.
+Note
+----
+Use '--prefix=/usr' if you want the Nautilus extension to work.
 
 
 Run on Mac:
-===========
-
+~~~~~~~~~~~
 Just double-click the SparkleShare.app.
 
 
 Build on Mac:
-=============
-
+~~~~~~~~~~~~~
 Install the Mono Framework, MonoDevelop and the MonoMac plugin (you find it in Add-in Manager).
 
-You may need to adjust some environment variables to let the build environment tools find mono:
+You may need to adjust some environment variables to let the build environment tools find mono::
    
-   $ export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin:$PATH
-   $ export PKG_CONFIG=/Library/Frameworks/Mono.framework/Versions/Current/bin/pkg-config
-   $ export PKG_CONFIG_PATH=/Library/Frameworks/Mono.framework/Versions/Current/lib/pkgconfig
+    export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin:$PATH
+    export PKG_CONFIG=/Library/Frameworks/Mono.framework/Versions/Current/bin/pkg-config
+    export PKG_CONFIG_PATH=/Library/Frameworks/Mono.framework/Versions/Current/lib/pkgconfig
 
 Then you need either MacPorts or Homebrew. Go on and choose one of the next two sections.
 
 
 Using MacPorts
 --------------
+Install git, automake, and intltool::
 
-Install git, automake, and intltool:
+    sudo port install git-core automake intltool
 
-   $ sudo port install git-core automake intltool
+Start the first part of the build::
 
-Start the first part of the build:
-
-   $ ./autogen.sh --enable-gtkui=no
-   $ make
+    ./autogen.sh --enable-gtkui=no
+    make
 
 The last step will give you some errors in SparkleShare.exe, ignore these and go on to the
 MonoDevelop section.
@@ -132,11 +125,10 @@ MonoDevelop section.
 
 Using Homebrew
 --------------
-
 Because there are old versions of autoconf and automake installed on OS X, they are not in 
-the official master branch. It's easy to create the formulas:
+the official master branch. It's easy to create the formulas::
 
-   $ brew create $url
+    brew create $url
    
 Now install the formulas.
 
@@ -144,25 +136,24 @@ You can have a look at this branch for the created Formulas:
 https://github.com/toabi/homebrew/commits/sparkleshare
 
 You also have to comment out the 'keg_only' in gettext and remove it if you already
-installed it. If you created the formulas install them:
+installed it. If you created the formulas install them::
 
-	$ brew install git autoconf automake intltool gettext
+    brew install git autoconf automake intltool gettext
 
-Now start the first part of the build:
+Now start the first part of the build::
 
-	$ export ACLOCAL_FLAGS="-I /usr/local/share/aclocal"
-	$ cd SmartIrc4net
-	$ ./autogen.sh
-	$ cd ..
-	$ ./autogen.sh --enable-gtkui=no
-	$ make
+    export ACLOCAL_FLAGS="-I /usr/local/share/aclocal"
+    cd SmartIrc4net
+    ./autogen.sh
+    cd ..
+    ./autogen.sh --enable-gtkui=no
+    make
 
 Ignore the error and continue to the MonoDevelop-part.
 
 
 Building the Mac UI
 -------------------
-
 Now that you have compiled the libraries, open 'SparkleShare/Mac/SparkleShare.sln' in
 MonoDevelop and start the build.
 
@@ -179,26 +170,27 @@ Now you should have a working .app that you can run.
 
 
 Info
-====
+~~~~
 
-Official website:
-http://www.sparkleshare.org/
+`Official website`_
 
-Source code:
-http://github.com/SparkleShare/
+`Source code`_
 
 IRC Channel:
 #sparkleshare on irc.gnome.org
 
-Wiki:
-http://github.com/hbons/SparkleShare/wiki/
+Wiki_
 
-Report issues:
-http://github.com/hbons/SparkleShare/issues/
+`Report issues`_
 
-Translation project:
-http://www.transifex.net/projects/p/sparkleshare/
+`Translation project`_
 
 
 Now have fun and create cool things together! :)
 
+
+.. _`Official website`: http://www.sparkleshare.org/
+.. _`Source code`: http://github.com/SparkleShare/
+.. _Wiki: http://github.com/hbons/SparkleShare/wiki/
+.. _`Report issues`: http://github.com/hbons/SparkleShare/issues/
+.. _`Translation project`: http://www.transifex.net/projects/p/sparkleshare/
