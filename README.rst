@@ -88,7 +88,7 @@ You can build and install SparkleShare like this::
 
 Note
 ----
-Use '--prefix=/usr' if you want the Nautilus extension to work.
+Use ``--prefix=/usr`` if you want the Nautilus extension to work.
 
 
 Run on Mac:
@@ -136,7 +136,7 @@ Now install the formulas.
 You can have a look at this branch for the created Formulas:
 https://github.com/toabi/homebrew/commits/sparkleshare
 
-You also have to comment out the 'keg_only' in gettext and remove it if you already
+You also have to comment out the ``keg_only`` in gettext and remove it if you already
 installed it. If you created the formulas install them::
 
     brew install git autoconf automake intltool gettext
@@ -155,17 +155,16 @@ Ignore the error and continue to the MonoDevelop-part.
 
 Building the Mac UI
 -------------------
-Now that you have compiled the libraries, open 'SparkleShare/Mac/SparkleShare.sln' in
+Now that you have compiled the libraries, open ``SparkleShare/Mac/SparkleShare.sln`` in
 MonoDevelop and start the build.
 
 To create the SparkleShare.app, select Project from the menu bar 
 and click "Create Mac Installer..." Save the SparkleShare.app somewhere.
 
-Paste the contents of the following file in SparkleShare.app/Contents/MonoBundle/config:
-https://raw.github.com/gist/1aeffa61bac73fc08eca/0c0f09ef9e36864c35f34fd5e8bf4f99886be193/gistfile1.txt
+Paste the contents of `this file`_the following file in ``SparkleShare.app/Contents/MonoBundle/config``.
 
-Copy /Library/Frameworks/Mono.framework/Versions/Current/lib/libintl.dylib 
-to SparkleShare.app/Contents/Resources
+Copy ``/Library/Frameworks/Mono.framework/Versions/Current/lib/libintl.dylib``
+to ``SparkleShare.app/Contents/Resources``
 
 Now you should have a working .app that you can run.
 
@@ -191,7 +190,9 @@ Now have fun and create cool things together! :)
 
 
 .. _`Official website`: http://www.sparkleshare.org/
+.. _`SparkleShare`: http://www.sparkleshare.org/
 .. _`Source code`: http://github.com/SparkleShare/
 .. _Wiki: http://github.com/hbons/SparkleShare/wiki/
 .. _`Report issues`: http://github.com/hbons/SparkleShare/issues/
-.. _`Translation project`: http://www.transifex.net/projects/p/sparkleshare/
+.. _`Translation project`: http://www.transifex.net/projects/p/sparkleshare
+.. _`this file`: https://raw.github.com/gist/1aeffa61bac73fc08eca/0c0f09ef9e36864c35f34fd5e8bf4f99886be193/gistfile1.txt
