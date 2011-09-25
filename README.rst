@@ -64,8 +64,8 @@ Build on Linux:
 Installing the build dependencies on Debian or Ubuntu::
 
     sudo apt-get install gtk-sharp2 mono-runtime mono-devel monodevelop \
-     libndesk-dbus1.0-cil-dev nant libnotify-cil-dev libgtk2.0-cil-dev \
-     libwebkit-cil-dev intltool libtool python-nautilus libndesk-dbus-glib1.0-cil-dev
+    libndesk-dbus1.0-cil-dev nant libnotify-cil-dev libgtk2.0-cil-dev \
+     ibwebkit-cil-dev intltool libtool python-nautilus libndesk-dbus-glib1.0-cil-dev
 
 For Ubuntu libappindicator support, run the following before building::
 
@@ -75,9 +75,9 @@ For Ubuntu libappindicator support, run the following before building::
 On Fedora::
 
     sudo yum install gtk-sharp2-devel mono-core mono-devel monodevelop \
-     ndesk-dbus-devel ndesk-dbus-glib-devel nautilus-python-devel nant \
-     notify-sharp-devel webkit-sharp-devel webkitgtk-devel libtool intltool \
-     gnome-doc-utils
+    ndesk-dbus-devel ndesk-dbus-glib-devel nautilus-python-devel nant \
+    notify-sharp-devel webkit-sharp-devel webkitgtk-devel libtool intltool \
+    gnome-doc-utils
 
 
 You can build and install SparkleShare like this::
